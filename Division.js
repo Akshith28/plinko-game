@@ -13,6 +13,7 @@ class Division {
       rectMode(CENTER);
       fill("white");
       rect(pos.x, pos.y, this.width, this.height);
-      
+     
+       
     }
   };
