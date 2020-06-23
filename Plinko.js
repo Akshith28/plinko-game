@@ -1,10 +1,11 @@
 class Plinko {
-    constructor(x,y,r) {
+    constructor(x,y) {
       var options = {
+        restitution : 1.0,
         isStatic: true
       }
-      this.r = r;
-      this.body = Bodies.circle(x,y,r,options);
+      this.r = 10;
+      this.body = Bodies.circle(x,y,10,options);
       World.add(world, this.body);
     }
     display(){
@@ -12,10 +13,11 @@ class Plinko {
       var angle = this.body.angle;
       push();
       translate(pos.x,pos.y);
+      rotate(angle);
       noStroke();
-      ellipseMode(CENTER);
+      ellipseMode(RADIUS);
       fill("white");
       ellipse(0,0,this.r,this.r);
-      
+      pop();
     }
   };
