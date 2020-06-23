@@ -18,15 +18,13 @@ function setup() {
 
  ground = new Ground(240,790,480,20);
 
+
  for (var k =0 ;k<= width;k = k+80) {
-  divisions.push(new Division(k,height - divisionHeight/2,10,divisionHeight));
+  divisions.push(new Division(k,height - divisionHeight/2));
   
 }
- 
- for (var j =40;j <= width;j = j+50) {
-  plinkos.push(new Plinko(j,75,10));  
- }
 
+ 
  for (var j =40;j <= width;j = j+50) {
   plinkos.push(new Plinko(j,75,10));  
  }
@@ -53,7 +51,7 @@ function draw() {
   background(0);
   Engine.update(engine);  
   ground.display();
-  console.log(ground.position.y);
+  
  
   for(var j = 0;j<plinkos.length;j++) {
     plinkos[j].display();
@@ -67,4 +65,5 @@ function draw() {
     divisions[k].display();
   }
   
+  console.log(ground.body.position.x);
 }
